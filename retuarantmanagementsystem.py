@@ -21,7 +21,7 @@ class RestuarantOrderManagement:
             "DRINKS":1
         }
 
-        self.exchange_rate = 82 # exchange rate for currency conversion
+        self.exchange_rate = 123 # exchange rate for currency conversion
 
         self.setup_background(root) # set up the background image
 
@@ -69,7 +69,7 @@ class RestuarantOrderManagement:
             values=('USD','BDT')
         )
         currency_dropdown.grid(
-            row=item(self.menu_items) + 1,
+            row=len(self.menu_items) + 1,
             column=1,
             padx=10,
             pady=5
@@ -98,10 +98,10 @@ class RestuarantOrderManagement:
         canvas = tk.Canvas(root, width=bg_width, height=bg_height)
         canvas.pack()
 
-        original_image = tk.PhotoImage(file="backgroung.png")
+        original_image = tk.PhotoImage(file="background.png")
         background_image = original_image.subsample(
             original_image.width() // bg_width,
-            original_image.bg_height() // bg_height
+            original_image.height() // bg_height
         )
         canvas.create_image(0,0, anchor=tk.NW, image=background_image)
         canvas.image = background_image
