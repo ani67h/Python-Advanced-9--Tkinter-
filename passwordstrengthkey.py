@@ -1,17 +1,10 @@
 from tkinter import *
-import random
-from PIL import Image, ImageTk
 
-# create window
 root = Tk()
 root.title('Password Strength Key')
 root.geometry('400x300')
 
 frame = Frame(master=root, height=400, width=300, bg="#d0efff")
-
-upload = Image.open('vector-login-and-sign-in-user-interface-business-website-modern-ui-template.jpg')
-upload = upload.resize((300, 300))
-image = ImageTk.PhotoImage(upload)
 
 lbl1 = Label(frame, text="Enter your password to check it's strength", bg="#3895D3", fg='white', width=35)
 pass_entry = Entry(frame)
